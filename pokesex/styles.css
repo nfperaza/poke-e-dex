@@ -1,0 +1,114 @@
+body {
+    font-family: 'Rubik', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+ 
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+ 
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+ 
+h1 {
+    color: #333;
+}
+ 
+.pokedex {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+ 
+.card {
+    position: relative;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.2s;
+}
+ 
+.card:hover {
+    transform: scale(1.05);
+}
+ 
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+ 
+.card-image {
+    width: 100%;
+    height: auto;
+    animation: float 3s ease-in-out infinite;
+}
+ 
+.card-title {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+ 
+.card-subtitle {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 10px;
+}
+ 
+ 
+.card.fire { border-left: 5px solid #f54e40; }
+.card.water { border-left: 5px solid #4e97f5; }
+.card.grass { border-left: 5px solid #4caf50; }
+.card.electric { border-left: 5px solid #f7d02c; }
+.card.ice { border-left: 5px solid #a8d8e0; }
+.card.fighting { border-left: 5px solid #c22e28; }
+.card.poison { border-left: 5px solid #a33ea1; }
+.card.bug { border-left: 5px solid #a6b91a; }
+.card.rock { border-left: 5px solid #b6a136; }
+.card.ghost { border-left: 5px solid #735797; }
+.card.steel { border-left: 5px solid #b7b7ce; }
+.card.fairy { border-left: 5px solid #d685ad; }
+.card.normal { border-left: 5px solid #a8a77a; }
+.card.psychic { border-left: 5px solid #f85888; }
+.card.flying { border-left: 5px solid #a98ff3; }
+ 
+ 
+.card.double-type::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background-color: transparent;
+}
+ 
+.card.double-type.fire::before { background-color: #f54e40; }
+.card.double-type.water::before { background-color: #4e97f5; }
+.card.double-type.grass::before { background-color: #4caf50; }
+.card.double-type.electric::before { background-color: #f7d02c; }
+.card.double-type.ice::before { background-color: #a8d8e0; }
+.card.double-type.fighting::before { background-color: #c22e28; }
+.card.double-type.poison::before { background-color: #a33ea1; }
+.card.double-type.bug::before { background-color: #a6b91a; }
+.card.double-type.rock::before { background-color: #b6a136; }
+.card.double-type.ghost::before { background-color: #735797; }
+.card.double-type.steel::before { background-color: #b7b7ce; }
+.card.double-type.fairy::before { background-color: #d685ad; }
+.card.double-type.normal::before { background-color: #a8a77a; }
+.card.double-type.psychic::before { background-color: #f85888; }
+.card.double-type.flying::before { background-color: #a98ff3; }
+ 
+@media (max-width: 600px) {
+    .pokedex {
+        grid-template-columns: 1fr;
+    }
